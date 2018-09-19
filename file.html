@@ -14,15 +14,15 @@
 		<div id="box">box</div>
 		<script>
 			
-			var t = 0;
-			box.addEventListener('touchstart',()=>{
-				console.log('start')
-				t = new Date().getTime(); //touchstart 的时间戳
-			})
-			box.addEventListener('click',()=>{
-				console.log('click...')
-				console.log( new Date().getTime()-t ) //click的时间戳 - click的时间戳 ，结果即为这两个事件的间隔时间
-				btn.innerHTML =  new Date().getTime()-t //将btn内容 填入时间；
+			box.addEventListener('touchstart',(e)=>{
+				box.innerHTML = e.touches.length;
+				box.addEventListener('touchmove',()=>{
+					console.log('move')
+					box.innerHTML = e.touches.length;
+				})
+				box.addEventListener('touchend',()=>{
+					console.log('end')
+				})
 			})
 		</script>
 		
