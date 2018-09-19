@@ -30,14 +30,14 @@
 			})*/
 		</script>
 		<script>
-			box.addListener('touchstart',(e)=>{
+			box.addEventListener('touchstart',(e)=>{
 				console.log('start');
 				box.innerHTML = e.touches.length;
-				box.addListener('touchmove',()=>{
+				box.addEventListener('touchmove',()=>{
 					console.log('move');
 					box.innerHTML = e.touches.length;
 				})
-				box.addListener('touchend',()=>{
+				box.addEventListener('touchend',()=>{
 					console.log('end')
 				})
 			})
