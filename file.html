@@ -32,10 +32,10 @@
 		<script>
 			box.addEventListener('touchstart',(e)=>{
 				console.log('start');
-				box.innerHTML = e.touches.length;
+				btn.innerHTML = e.touches.length;
 				box.addEventListener('touchmove',()=>{
 					console.log('move');
-					box.innerHTML = e.touches.length;
+					btn.innerHTML = e.touches.length;
 				})
 				box.addEventListener('touchend',()=>{
 					console.log('end')
